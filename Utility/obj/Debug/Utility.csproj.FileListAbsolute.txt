@@ -1,0 +1,28 @@
+E:\workspace\Visual Studio\Libraries\Utility\bin\Debug\Utility.dll
+E:\workspace\Visual Studio\Libraries\Utility\bin\Debug\Utility.pdb
+E:\workspace\Visual Studio\Libraries\Utility\obj\Debug\Utility.dll
+E:\workspace\Visual Studio\Libraries\Utility\obj\Debug\Utility.pdb
+E:\workspace\Visual Studio\Libraries\Utility\bin\Debug\Utility.XML
+H:\Libraries\Utility\bin\Debug\Utility.XML
+H:\Libraries\Utility\bin\Debug\Utility.dll
+H:\Libraries\Utility\bin\Debug\Utility.pdb
+H:\Libraries\Utility\obj\Debug\Utility.dll
+H:\Libraries\Utility\obj\Debug\Utility.pdb
+I:\Libraries\Utility\bin\Debug\Utility.XML
+I:\Libraries\Utility\bin\Debug\Utility.dll
+I:\Libraries\Utility\bin\Debug\Utility.pdb
+I:\Libraries\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+I:\Libraries\Utility\obj\Debug\Utility.dll
+I:\Libraries\Utility\obj\Debug\Utility.pdb
+F:\WorkSpace\Github\CSharpLibrary\Utility\bin\Debug\Utility.XML
+F:\WorkSpace\Github\CSharpLibrary\Utility\bin\Debug\Utility.dll
+F:\WorkSpace\Github\CSharpLibrary\Utility\bin\Debug\Utility.pdb
+F:\WorkSpace\Github\CSharpLibrary\Utility\obj\Debug\Utility.dll
+F:\WorkSpace\Github\CSharpLibrary\Utility\obj\Debug\Utility.pdb
+I:\CSharpLibrary\Utility\bin\Debug\Utility.XML
+I:\CSharpLibrary\Utility\bin\Debug\Utility.dll
+I:\CSharpLibrary\Utility\bin\Debug\Utility.pdb
+I:\CSharpLibrary\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+I:\CSharpLibrary\Utility\obj\Debug\Utility.dll
+I:\CSharpLibrary\Utility\obj\Debug\Utility.pdb
+F:\WorkSpace\Github\CSharpLibrary\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache

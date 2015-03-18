@@ -1,0 +1,132 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Utility.Core
+{
+	/// <summary>
+    /// 类型工具类
+    /// </summary>
+	public partial class TypeTool
+    {
+		<# int a = (int)'A'; #>
+		<# string generic = "A"; #>
+		<# string all_condition = "o is A"; #>
+		<# string any_condition = "o is A"; #>
+		<# for(int i = 0; i < 14; i++)
+		 { 
+			if(i == 0)
+			{
+				generic = "A";
+				all_condition = "o is A";
+				any_condition = "o is A";
+				continue;
+			}
+			else
+			{
+				generic += ", " + (char)(a + i);
+				all_condition += " && o is " + (char)(a + i);
+				any_condition += " || o is " + (char)(a + i);
+			}
+		 #>
+
+		/// <summary>
+        /// 类型判断
+        /// </summary>
+		public static bool IsAll<<#Write(generic); #>>(object o)
+		{
+			if (o == null)
+                return false;
+			return <#Write(all_condition); #>;
+		}
+
+		/// <summary>
+        /// 类型判断
+        /// </summary>
+		public static bool IsAny<<#Write(generic); #>>(object o)
+		{
+			if (o == null)
+                return false;
+			return <#Write(any_condition); #>;
+		}
+
+		/// <summary>
+        /// 类型判断 true = and, false = any
+        /// </summary>
+		public static bool Is<<#Write(generic); #>>(object o, bool condition)
+		{
+			if (o == null)
+                return false;
+			else if(condition)
+				return <#Write(all_condition); #>;
+			return <#Write(any_condition); #>;
+		}
+		<# } #>
+
+	}
+
+	/// <summary>
+    /// 类型工具类
+    /// </summary>
+	public partial class TypeTool
+    {
+
+		/// <summary>
+        /// 判断是否关键字类型（不包括object）
+        /// </summary>
+        public static bool IsKeyType(Type type)
+        {
+            if (type == null)
+                return false;
+            int type_code = (int)System.Type.GetTypeCode(type);
+            if (type_code == (int)TypeCode.String)
+                return true;
+            else if (type_code >= (int)TypeCode.Boolean && type_code <= (int)TypeCode.Decimal)
+                return true;
+            return false;
+        }
+
+        /// <summary>
+        /// 判断是否关键字类型（不包括object）
+        /// </summary>
+        public static bool IsKeyType(object o)
+        {
+            if (o == null)
+                return false;
+            return IsKeyType(o.GetType());
+        }
+
+        /// <summary>
+        /// 判断是否基本数据类型（不包括object）
+        /// </summary>
+        public static bool IsBaseType(Type type)
+        {
+            if (type == null)
+                return false;
+            int type_code = (int)System.Type.GetTypeCode(type);
+            if (type_code == (int)TypeCode.String)
+                return true;
+            else if (type_code >= (int)TypeCode.DBNull && type_code <= (int)TypeCode.DateTime)
+                return true;
+            return false;
+        }
+
+        /// <summary>
+        /// 判断是否基本数据类型（不包括object）
+        /// </summary>
+        public static bool IsBaseType(object o)
+        {
+            if (o == null)
+                return false;
+            return IsBaseType(o.GetType()); 
+        }
+	}
+}

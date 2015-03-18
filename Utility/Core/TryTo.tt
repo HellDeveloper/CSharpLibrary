@@ -1,0 +1,74 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Utility.Core
+{
+	/// <summary>
+    /// 类型转换工具类
+    /// </summary>
+	public static partial class TryTo
+    {
+	<#
+		string that_object = "this ";
+		string that_string = "this ";
+		string[] try_tos = 
+		{ 
+			"Short", "Int", "Long", 
+			"UShort", "UInt", "ULong", 
+			"Float", "Double", "Decimal", 
+			"Char",
+			"Bool",
+			"DateTime"
+		};
+
+		foreach(string to in try_tos)
+		{
+			string lower = to.ToLower();
+			if(to == "DateTime")
+			{
+				lower = "System." + to;
+			}
+		#>
+
+		/// <summary>
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns>转换失败返回null</returns>
+		public static <#=lower #>? TryTo<#=to #>(<#=that_object #>object obj)
+		{
+			if (obj == null)
+				return null;
+			else if (obj is <#=lower #>)
+				return (<#=lower #>)obj;
+			<#=lower #> result;
+			if(<#=lower #>.TryParse(obj.ToString(), out result))
+				return result;
+			return null;
+		}
+
+		/// <summary>
+		/// </summary>
+		/// <param name="str"></param>
+		/// <returns></returns>
+		public static <#=lower #>? TryTo<#=to #>(<#=that_string #>string str)
+		{
+			<#=lower #> result;
+			if(<#=lower #>.TryParse(str, out result))
+				return result;
+			return null;
+		}
+		<#}#>
+
+		
+
+	}
+}
