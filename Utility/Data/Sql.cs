@@ -43,9 +43,10 @@ namespace Utility.Data
         }
 
         /// <summary>
-        /// 获取条件
+        /// 
         /// </summary>
         /// <param name="param"></param>
+        /// <param name="func"></param>
         /// <returns></returns>
         public static string ConditionSql(IDataParameter param, Func<IDataParameter, object> func)
         {

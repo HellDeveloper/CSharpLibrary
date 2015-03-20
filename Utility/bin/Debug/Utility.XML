@@ -737,9 +737,10 @@
         </member>
         <member name="M:Utility.Data.Sql.ConditionSql(System.Data.IDataParameter,System.Func{System.Data.IDataParameter,System.Object})">
             <summary>
-            获取条件
+            
             </summary>
             <param name="param"></param>
+            <param name="func"></param>
             <returns></returns>
         </member>
         <member name="M:Utility.Data.Sql.GetConditionSql``1(``0)">
