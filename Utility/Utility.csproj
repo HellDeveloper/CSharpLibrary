@@ -56,9 +56,8 @@
     </Compile>
     <Compile Include="Data\DbTool.cs" />
     <Compile Include="Data\DbParameter.cs" />
+    <Compile Include="Data\Sql.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sql\MsSql.cs" />
-    <Compile Include="Sql\Share.cs" />
     <Compile Include="WebForm\ControlTool.cs" />
   </ItemGroup>
   <ItemGroup>

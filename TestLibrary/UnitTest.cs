@@ -17,8 +17,6 @@ namespace TestLibrary
 
         SqlConnection conn = new SqlConnection(ConnStr);
 
-        MsSql mssql = new MsSql();
-
         [TestMethod]
         public List<SqlParameter> CreateParameter(string name, string sex, string bornDate, string IDCardNumber, string address)
         {
@@ -37,10 +35,10 @@ namespace TestLibrary
         {
             SqlConnection conn = new SqlConnection(ConnStr);
             var args = this.CreateParameter("Jack", "男", "1989-10-10", "123456789987654321", "东莞市");
-            string insert_sql = mssql.BuildInsertSql(TableName, args);
-            conn.ExecuteNonQuery(insert_sql, args);
-            string delete_sql = mssql.BuildDeleteSql(TableName, args);
-            conn.ExecuteNonQuery(delete_sql, args);
+            //string insert_sql = args.BuildInsertSql(TableName, args);
+            //conn.ExecuteNonQuery(insert_sql, args);
+            //string delete_sql = mssql.BuildDeleteSql(TableName, args);
+            //conn.ExecuteNonQuery(delete_sql, args);
         }
 
     }

@@ -716,194 +716,60 @@
             <param name="direction"></param>
             <returns></returns>
         </member>
-        <member name="T:Utility.Sql.MsSql">
+        <member name="T:Utility.Data.Sql">
             <summary>
-            sql server
+            SQL语句
             </summary>
         </member>
-        <member name="T:Utility.Sql.Share">
-            <summary>
-            共用部分
-            </summary>
-        </member>
-        <member name="M:Utility.Sql.Share.ReturnParameterName(System.Data.IDataParameter)">
-            <summary>
-            
-            </summary>
-            <param name="param"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Utility.Sql.Share.ReturnFormatSqlValue(System.Data.IDataParameter)">
-            <summary>
-            
-            </summary>
-            <param name="param"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Utility.Sql.Share.ReturnUpdateSet``1(System.Data.IDataParameter,System.Func{System.Data.IDataParameter,``0})">
-            <summary>
-            
-            </summary>
-            <param name="param"></param>
-            <param name="func"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Utility.Sql.Share.ReturnUpdateSetValue(System.Data.IDataParameter)">
-            <summary>
-            fieldName = value
-            </summary>
-            <param name="param"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Utility.Sql.Share.ReturnUpdateSetParameterName(System.Data.IDataParameter)">
-            <summary>
-            fieldName = parameterName
-            </summary>
-            <param name="param"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Utility.Sql.Share.ReturnItem1``2(System.Tuple{``0,``1})">
-            <summary>
-            /
-            </summary>
-            <param name="tuple"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Utility.Sql.Share.ReturnItem2``2(System.Tuple{``0,``1})">
-            <summary>
-            
-            </summary>
-            <param name="tuple"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Utility.Sql.Share.GetFormatSqlValue(System.Object)">
+        <member name="M:Utility.Data.Sql.FormatSqlValue(System.Object)">
             <summary>
             
             </summary>
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Sql.Share.GetConditionSql(System.Data.IDataParameter)">
+        <member name="M:Utility.Data.Sql.GetParameterName(System.Data.IDataParameter)">
             <summary>
-            获取条件Sql
+            返回ParameterName
             </summary>
             <param name="param"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Sql.Share.GetConditionSql(System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
+        <member name="M:Utility.Data.Sql.ConditionSql(System.Data.IDataParameter,System.Func{System.Data.IDataParameter,System.Object})">
             <summary>
-            
+            获取条件
             </summary>
-            <param name="args"></param>
+            <param name="param"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Sql.Share.GetInsertSql(System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
-            <summary>
-            
-            </summary>
-            <param name="tableName"></param>
-            <param name="args"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Utility.Sql.Share.GetUpdateSql(System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter},System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
-            <summary>
-            获取更新sql
-            </summary>
-            <param name="tableName"></param>
-            <param name="sets"></param>
-            <param name="where"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Utility.Sql.Share.GetDeleteSql(System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
-            <summary>
-            
-            </summary>
-            <param name="tableName"></param>
-            <param name="where"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Utility.Sql.Share.BuildConditionSql(System.Data.IDataParameter)">
+        <member name="M:Utility.Data.Sql.GetConditionSql``1(``0)">
             <summary>
             
             </summary>
             <param name="param"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Sql.Share.BuildConditionSql(System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
+        <member name="M:Utility.Data.Sql.GetConditionSql``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             
             </summary>
+            <typeparam name="T"></typeparam>
             <param name="args"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Sql.Share.BuildInsertSql(System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
+        <member name="M:Utility.Data.Sql.BuildConditionSql``1(``0)">
             <summary>
             
             </summary>
-            <param name="tableName"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.Data.Sql.BuildConditionSql``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
             <param name="args"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Utility.Sql.Share.BuildUpdateSql(System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter},System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
-            <summary>
-            构建更新sql语句
-            </summary>
-            <param name="tableName"></param>
-            <param name="sets"></param>
-            <param name="where"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Utility.Sql.Share.BuildDeleteSql(System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
-            <summary>
-            构建删除的sql语句
-            </summary>
-            <param name="tableName"></param>
-            <param name="where"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Utility.Sql.Share.AppendPageSql(System.String,System.Int32,System.Int32,System.String)">
-            <summary>
-            分页 Sql
-            </summary>
-            <param name="index">第几页（从0开始）</param>
-            <param name="pageSize">每一页的大小</param>
-            <param name="selectSql">查询的SQL语句</param>
-            <param name="orderBy"></param>
-            <returns>返回新的SQL语句</returns>
-        </member>
-        <member name="P:Utility.Sql.Share.InsertSqlFormat">
-            <summary>
-            0:table_name, 1:field_names, 2:values
-            </summary>
-        </member>
-        <member name="P:Utility.Sql.Share.UpdateSqlFormat">
-            <summary>
-            0:table_name, 1:sets, 2:where
-            </summary>
-        </member>
-        <member name="P:Utility.Sql.Share.DeleteSqlFormat">
-            <summary>
-            0:table_name, 1:where
-            </summary>
-        </member>
-        <member name="M:Utility.Sql.MsSql.AppendPageSql(System.String,System.Int32,System.Int32,System.String)">
-            <summary>
-            分页 Sql
-            </summary>
-            <param name="index">第几页（从0开始）</param>
-            <param name="pageSize">每一页的大小</param>
-            <param name="selectSql">查询的SQL语句(不允许带ORDER BY)</param>
-            <param name="orderBy"></param>
-            <returns>返回新的SQL语句</returns>
-        </member>
-        <member name="M:Utility.Sql.MsSql.PageSqlIn2005(System.String,System.Int32,System.Int32,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="selectSql"></param>
-            <param name="index"></param>
-            <param name="pageSize"></param>
-            <param name="orderBy"></param>
             <returns></returns>
         </member>
         <member name="T:Utility.WebForm.ControlTool">
