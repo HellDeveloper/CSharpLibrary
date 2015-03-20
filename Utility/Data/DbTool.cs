@@ -13,8 +13,9 @@ namespace Utility.Data
     public static partial class DbTool
     {
         /// <summary>
-        /// 打开连接
+        /// 打开数据库连接
         /// </summary>
+        /// <typeparam name="T"></typeparam>
         /// <param name="conn"></param>
         /// <returns></returns>
         public static bool OpenConnection<T>(this T conn) where T : IDbConnection
@@ -27,8 +28,9 @@ namespace Utility.Data
         }
 
         /// <summary>
-        /// 关闭连接
+        /// 关闭数据库连接
         /// </summary>
+        /// <typeparam name="T"></typeparam>
         /// <param name="conn"></param>
         /// <returns></returns>
         public static bool CloseConnection<T>(this T conn) where T : IDbConnection
@@ -39,11 +41,12 @@ namespace Utility.Data
         }
 
         /// <summary>
-        /// 
+        /// 创建Command对象
         /// </summary>
-        /// <param name="conn"></param>
-        /// <param name="sql"></param>
-        /// <param name="args"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="conn">连接对象</param>
+        /// <param name="sql">sql语句</param>
+        /// <param name="args">参数</param>
         /// <returns></returns>
         public static IDbCommand CreateCommand<T>(this T conn, string sql, IEnumerable<IDataParameter> args) where T : IDbConnection
         {
@@ -68,6 +71,7 @@ namespace Utility.Data
         /// <summary>
         /// 
         /// </summary>
+        /// <typeparam name="T"></typeparam>
         /// <typeparam name="Result"></typeparam>
         /// <param name="conn"></param>
         /// <param name="sql"></param>
@@ -152,6 +156,7 @@ namespace Utility.Data
         /// <summary>
         /// 
         /// </summary>
+        /// <typeparam name="T"></typeparam>
         /// <typeparam name="Result"></typeparam>
         /// <param name="conn"></param>
         /// <param name="sql"></param>
@@ -218,6 +223,11 @@ namespace Utility.Data
         public static DataTable GetDataTable<T>(this T conn, string sql, IEnumerable<IDataParameter> args) where T : IDbConnection
         {
             return DbTool.ExecuteReader(conn, sql, args, DbTool.IDataReaderToDataTable);
+        }
+
+        public static void SetConnectionString<T>(this T conn, string str)
+        {
+            var connStr = System.Configuration.ConfigurationManager.ConnectionStrings[str];
         }
 
     }
@@ -287,7 +297,6 @@ namespace Utility.Data
         {
             return Sql.BuildConditionSql(param);
         }
-
 
     }
 }

@@ -14,42 +14,18 @@ namespace Utility.Data
     /// </summary>
     public static class DbParameter
     {
-        /// <summary>
-        /// 默认比较运算符
-        /// </summary>
-        public const string DEFAULT_COMPARER = "=";
 
         /// <summary>
         /// ParameterName的前缀
         /// </summary>
-        internal static readonly char[] PARAMETER_NAME_PERFIX =
-        {
-            '@', ':'
-        };
+        internal static readonly char[] PARAMETER_NAME_PERFIX = { '@', ':' };
 
         /// <summary>
-        /// 调整SourceColumn。
-        /// if (String.IsNullOrWhiteSpace(param.ParameterName)) return
+        /// ParameterName的前缀
         /// </summary>
-        /// <param name="param"></param>
-        /// <param name="field"></param>
-        /// <param name="comparer"></param>
-        internal static void AdjustmentSourceColumn(IDataParameter param, string field = null, string comparer = null)
+        public static char[] ParameterNamePerfix
         {
-            if (String.IsNullOrWhiteSpace(param.ParameterName))
-                return;
-            if (String.IsNullOrWhiteSpace(param.SourceColumn))
-            {
-                field = field ?? param.ParameterName.TrimStart(PARAMETER_NAME_PERFIX);
-                comparer = comparer ?? DbParameter.DEFAULT_COMPARER;
-                param.SourceColumn = String.Format("{0}{1}{2}", field, Assist.WHITE_SPACE, comparer);
-            }
-            else
-            {
-                string[] array = param.SourceColumn.Split(Assist.WHITE_SPACE);
-                if (array.Length == 1)
-                    param.SourceColumn = String.Format("{0}{1}{2}", array[0], Assist.WHITE_SPACE, comparer ?? DbParameter.DEFAULT_COMPARER);
-            }
+            get { return PARAMETER_NAME_PERFIX; }
         }
 
         /// <summary>
@@ -73,10 +49,9 @@ namespace Utility.Data
         /// <param name="value"></param>
         /// <param name="sourceColumn"></param>
         /// <param name="direction"></param>
-        /// <returns></returns>
+        /// <returns>返回已经添加到集合里</returns>
         public static T Add<T>(this ICollection<T> collection, string parameterName, object value, string sourceColumn, ParameterDirection direction = ParameterDirection.Input) where T : IDataParameter, new()
         {
-            sourceColumn = sourceColumn ?? (parameterName != null ? parameterName.TrimStart(PARAMETER_NAME_PERFIX) + " " + DEFAULT_COMPARER : null);
             T t = new T()
             {
                 ParameterName = parameterName,

@@ -559,31 +559,35 @@
         </member>
         <member name="M:Utility.Data.DbTool.OpenConnection``1(``0)">
             <summary>
-            打开连接
+            打开数据库连接
             </summary>
+            <typeparam name="T"></typeparam>
             <param name="conn"></param>
             <returns></returns>
         </member>
         <member name="M:Utility.Data.DbTool.CloseConnection``1(``0)">
             <summary>
-            关闭连接
+            关闭数据库连接
             </summary>
+            <typeparam name="T"></typeparam>
             <param name="conn"></param>
             <returns></returns>
         </member>
         <member name="M:Utility.Data.DbTool.CreateCommand``1(``0,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
             <summary>
-            
+            创建Command对象
             </summary>
-            <param name="conn"></param>
-            <param name="sql"></param>
-            <param name="args"></param>
+            <typeparam name="T"></typeparam>
+            <param name="conn">连接对象</param>
+            <param name="sql">sql语句</param>
+            <param name="args">参数</param>
             <returns></returns>
         </member>
         <member name="M:Utility.Data.DbTool.Execute``2(``0,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter},System.Func{System.Data.IDbCommand,``1})">
             <summary>
             
             </summary>
+            <typeparam name="T"></typeparam>
             <typeparam name="Result"></typeparam>
             <param name="conn"></param>
             <param name="sql"></param>
@@ -635,6 +639,7 @@
             <summary>
             
             </summary>
+            <typeparam name="T"></typeparam>
             <typeparam name="Result"></typeparam>
             <param name="conn"></param>
             <param name="sql"></param>
@@ -713,24 +718,10 @@
             
             </summary>
         </member>
-        <member name="F:Utility.Data.DbParameter.DEFAULT_COMPARER">
-            <summary>
-            默认比较运算符
-            </summary>
-        </member>
         <member name="F:Utility.Data.DbParameter.PARAMETER_NAME_PERFIX">
             <summary>
             ParameterName的前缀
             </summary>
-        </member>
-        <member name="M:Utility.Data.DbParameter.AdjustmentSourceColumn(System.Data.IDataParameter,System.String,System.String)">
-            <summary>
-            调整SourceColumn。
-            if (String.IsNullOrWhiteSpace(param.ParameterName)) return
-            </summary>
-            <param name="param"></param>
-            <param name="field"></param>
-            <param name="comparer"></param>
         </member>
         <member name="M:Utility.Data.DbParameter.GetFieldName(System.Data.IDataParameter)">
             <summary>
@@ -750,7 +741,7 @@
             <param name="value"></param>
             <param name="sourceColumn"></param>
             <param name="direction"></param>
-            <returns></returns>
+            <returns>返回已经添加到集合里</returns>
         </member>
         <member name="T:Utility.Data.Sql">
             <summary>
