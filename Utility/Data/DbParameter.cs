@@ -60,8 +60,6 @@ namespace Utility.Data
         /// <returns>返回null，是获取不到</returns>
         public static string GetFieldName(IDataParameter param)
         {
-            if (String.IsNullOrWhiteSpace(param.ParameterName))
-                return null;
             string[] array = param.SourceColumn.Split(Assist.WHITE_SPACE);
             return array.Length > 0 ? array[0] : null;
         }
@@ -76,7 +74,7 @@ namespace Utility.Data
         /// <param name="sourceColumn"></param>
         /// <param name="direction"></param>
         /// <returns></returns>
-        public static T Add<T>(this ICollection<T> collection, string parameterName, object value, string sourceColumn = null, ParameterDirection direction = ParameterDirection.Input) where T : IDataParameter, new()
+        public static T Add<T>(this ICollection<T> collection, string parameterName, object value, string sourceColumn, ParameterDirection direction = ParameterDirection.Input) where T : IDataParameter, new()
         {
             sourceColumn = sourceColumn ?? (parameterName != null ? parameterName.TrimStart(PARAMETER_NAME_PERFIX) + " " + DEFAULT_COMPARER : null);
             T t = new T()

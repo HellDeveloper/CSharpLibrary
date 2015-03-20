@@ -188,6 +188,7 @@ namespace Utility.Collections
                 return new Tuple<StringBuilder, StringBuilder>(new StringBuilder(), new StringBuilder());
             return new Tuple<StringBuilder, StringBuilder>(tuple.Item1, tuple.Item2);
         }
+
         #endregion
 
     }
