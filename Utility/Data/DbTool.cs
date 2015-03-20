@@ -228,6 +228,7 @@ namespace Utility.Data
         public static void SetConnectionString<T>(this T conn, string str)
         {
             var connStr = System.Configuration.ConfigurationManager.ConnectionStrings[str];
+            
         }
 
     }
