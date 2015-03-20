@@ -194,7 +194,14 @@ namespace Utility.Data
             return Sql.InsertSql(args as IEnumerable<IDataParameter>, table_name, Sql.BuildParameterValue);
         }
 
-        public static string BuilDeleteSql<T>(this IEnumerable<T> args, string table_name) where T : IDataParameter
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="args"></param>
+        /// <param name="table_name"></param>
+        /// <returns></returns>
+        public static string BuildDeleteSql<T>(this IEnumerable<T> args, string table_name) where T : IDataParameter
         {
             return Sql.DeleteSql(args, table_name, Sql.BuildConditionSql);
         }

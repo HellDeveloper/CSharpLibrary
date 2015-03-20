@@ -553,22 +553,25 @@
             <summary>
             数据库
             </summary>
+            <summary>
+            数据库
+            </summary>
         </member>
-        <member name="M:Utility.Data.DbTool.OpenConnection(System.Data.IDbConnection)">
+        <member name="M:Utility.Data.DbTool.OpenConnection``1(``0)">
             <summary>
             打开连接
             </summary>
             <param name="conn"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Data.DbTool.CloseConnection(System.Data.IDbConnection)">
+        <member name="M:Utility.Data.DbTool.CloseConnection``1(``0)">
             <summary>
             关闭连接
             </summary>
             <param name="conn"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Data.DbTool.CreateCommand(System.Data.IDbConnection,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
+        <member name="M:Utility.Data.DbTool.CreateCommand``1(``0,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
             <summary>
             
             </summary>
@@ -577,25 +580,25 @@
             <param name="args"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Data.DbTool.Execute``1(System.Data.IDbConnection,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter},System.Func{System.Data.IDbCommand,``0})">
+        <member name="M:Utility.Data.DbTool.Execute``2(``0,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter},System.Func{System.Data.IDbCommand,``1})">
             <summary>
             
             </summary>
-            <typeparam name="T"></typeparam>
+            <typeparam name="Result"></typeparam>
             <param name="conn"></param>
             <param name="sql"></param>
             <param name="args"></param>
             <param name="func"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Data.DbTool.ExecuteNonQuery(System.Data.IDbCommand)">
+        <member name="M:Utility.Data.DbTool.ExecuteNonQuery``1(``0)">
             <summary>
             IDbCommand执行ExecuteNonQuery
             </summary>
             <param name="cmd"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Data.DbTool.ExecuteScalar(System.Data.IDbCommand)">
+        <member name="M:Utility.Data.DbTool.ExecuteScalar``1(``0)">
             <summary>
             IDbCommand执行ExecuteScalar
             </summary>
@@ -610,7 +613,7 @@
             <param name="name"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Data.DbTool.ExecuteNonQuery(System.Data.IDbConnection,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
+        <member name="M:Utility.Data.DbTool.ExecuteNonQuery``1(``0,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
             <summary>
             ExecuteNonQuery
             </summary>
@@ -619,7 +622,7 @@
             <param name="args"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Data.DbTool.ExecuteScalar(System.Data.IDbConnection,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
+        <member name="M:Utility.Data.DbTool.ExecuteScalar``1(``0,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
             <summary>
             
             </summary>
@@ -628,18 +631,18 @@
             <param name="args"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Data.DbTool.ExecuteReader``1(System.Data.IDbConnection,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter},System.Func{System.Data.IDataReader,``0})">
+        <member name="M:Utility.Data.DbTool.ExecuteReader``2(``0,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter},System.Func{System.Data.IDataReader,``1})">
             <summary>
             
             </summary>
-            <typeparam name="T"></typeparam>
+            <typeparam name="Result"></typeparam>
             <param name="conn"></param>
             <param name="sql"></param>
             <param name="args"></param>
             <param name="func"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Data.DbTool.GetDataReader(System.Data.IDbConnection,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter},System.Data.CommandBehavior)">
+        <member name="M:Utility.Data.DbTool.GetDataReader``1(``0,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter},System.Data.CommandBehavior)">
             <summary>
             
             </summary>
@@ -656,7 +659,7 @@
             <param name="reader"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Data.DbTool.GetDataTable(System.Data.IDbConnection,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
+        <member name="M:Utility.Data.DbTool.GetDataTable``1(``0,System.String,System.Collections.Generic.IEnumerable{System.Data.IDataParameter})">
             <summary>
             
             </summary>
@@ -665,12 +668,45 @@
             <param name="args"></param>
             <returns></returns>
         </member>
-        <member name="M:Utility.Data.DbTool.CopyParameter(System.Data.IDataParameter,System.Data.IDataParameter)">
+        <member name="M:Utility.Data.DbTool.GetConditionSql``2(``0,``1)">
             <summary>
             
             </summary>
-            <param name="source"></param>
-            <param name="destine">指定</param>
+            <typeparam name="T"></typeparam>
+            <typeparam name="Param"></typeparam>
+            <param name="t"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.Data.DbTool.GetConditionSql``2(``0,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="Param"></typeparam>
+            <param name="t"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.Data.DbTool.BuildConditionSql``2(``0,``1)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="Param"></typeparam>
+            <param name="t"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.Data.DbTool.BuildConditionSql``2(``0,System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="Param"></typeparam>
+            <param name="t"></param>
+            <param name="param"></param>
+            <returns></returns>
         </member>
         <member name="T:Utility.Data.DbParameter">
             <summary>
@@ -832,6 +868,15 @@
             <returns></returns>
         </member>
         <member name="M:Utility.Data.Sql.BuildInsertSql``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="args"></param>
+            <param name="table_name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utility.Data.Sql.BuildDeleteSql``1(System.Collections.Generic.IEnumerable{``0},System.String)">
             <summary>
             
             </summary>

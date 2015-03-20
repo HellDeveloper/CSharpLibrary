@@ -28,16 +28,26 @@ namespace TestLibrary
         }
 
         [TestMethod]
+        public void BuildSql()
+        {
+            var args = this.CreateParameter("Jack", "男", "1989-10-10");
+            args.Add("@IDcardNumber", "123456789", "IDCardNumber =");
+            args.Add("@Address", "东莞市", "Address =");
+            string insert_sql = args.BuildInsertSql(TableName);
+            string delete_sql = args.BuildDeleteSql(TableName);
+        }
+
+        [TestMethod]
         public void NonQuery()
         {
             SqlConnection conn = new SqlConnection(ConnStr);
             var args = this.CreateParameter("Jack", "男", "1989-10-10");
-            args.Add("@IDcardNumber", "123456789", "IDCardNumber");
-            args.Add("@Address", "东莞市", "Address");
+            args.Add("@IDcardNumber", "123456789", "IDCardNumber =");
+            args.Add("@Address", "东莞市", "Address =");
             string insert_sql = args.BuildInsertSql(TableName);
             conn.ExecuteNonQuery(insert_sql, args);
-            //string delete_sql = args.BuildDeleteSql(TableName);
-            //conn.ExecuteNonQuery(delete_sql, args);
+            string delete_sql = args.BuildDeleteSql(TableName);
+            conn.ExecuteNonQuery(delete_sql, args);
         }
 
     }
