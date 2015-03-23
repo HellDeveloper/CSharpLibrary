@@ -9,3 +9,4 @@ else
 {
 	SourceColumn = "FieldName Comparer"; // 空格是必须的
 }
+

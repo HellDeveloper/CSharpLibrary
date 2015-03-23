@@ -25,3 +25,4 @@ I:\CSharpLibrary\Utility\bin\Debug\Utility.pdb
 I:\CSharpLibrary\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
 I:\CSharpLibrary\Utility\obj\Debug\Utility.dll
 I:\CSharpLibrary\Utility\obj\Debug\Utility.pdb
+F:\WorkSpace\Github\CSharpLibrary\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache

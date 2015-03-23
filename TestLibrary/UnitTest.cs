@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Utility.Data;
+using Utility.WebForm;
 
 namespace TestLibrary
 {
@@ -48,6 +49,17 @@ namespace TestLibrary
             conn.ExecuteNonQuery(insert_sql, args);
             string delete_sql = args.BuildDeleteSql(TableName);
             conn.ExecuteNonQuery(delete_sql, args);
+        }
+        
+        [TestMethod]
+        public void ConvertToParameter()
+        {
+            IDataParameter param = ControlTool.ConvertToParameter<SqlParameter>("Name$lr", "J");
+            param.ParameterName = @"@Name";
+            SqlConnection conn = new SqlConnection(ConnStr);
+            var args = new IDataParameter[] { param };
+            string insert_sql = args.BuildInsertSql(TableName);
+            conn.ExecuteNonQuery(insert_sql, args);
         }
 
     }

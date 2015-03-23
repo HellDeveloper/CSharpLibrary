@@ -1,0 +1,5 @@
+F:\WorkSpace\Github\CSharpLibrary\WebApp\bin\WebApp.dll
+F:\WorkSpace\Github\CSharpLibrary\WebApp\bin\WebApp.pdb
+F:\WorkSpace\Github\CSharpLibrary\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+F:\WorkSpace\Github\CSharpLibrary\WebApp\obj\Debug\WebApp.dll
+F:\WorkSpace\Github\CSharpLibrary\WebApp\obj\Debug\WebApp.pdb

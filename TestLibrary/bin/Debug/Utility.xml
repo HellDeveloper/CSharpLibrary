@@ -743,6 +743,11 @@
             <param name="direction"></param>
             <returns>返回已经添加到集合里</returns>
         </member>
+        <member name="P:Utility.Data.DbParameter.ParameterNamePerfix">
+            <summary>
+            ParameterName的前缀
+            </summary>
+        </member>
         <member name="T:Utility.Data.Sql">
             <summary>
             SQL语句
@@ -880,6 +885,15 @@
             <summary>
             控件工具
             </summary>
+        </member>
+        <member name="M:Utility.WebForm.ControlTool.ConvertToParameter``1(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="prefix"></param>
         </member>
     </members>
 </doc>
